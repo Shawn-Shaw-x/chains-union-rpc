@@ -36,7 +36,7 @@ echo "Compiling protobuf files..."
 protoc -I ./ \
     --go_out=./ \
     --go-grpc_out=require_unimplemented_servers=false:. \
-    protobuf/*.proto
+    proto/*.proto
 
 if [ $? -eq 0 ]; then
     echo "Compilation completed successfully"

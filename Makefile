@@ -8,7 +8,7 @@ LDFLAGSSTRING +=-X main.GitDate=$(GITDATE)
 LDFLAGSSTRING +=-X main.GitVersion=$(GITVERSION)
 LDFLAGS :=-ldflags "$(LDFLAGSSTRING)"
 
-wallet-chain-account:
+chains-union-rpc:
 	env GO111MODULE=on go build $(LDFLAGS)
 .PHONY: chains-union-rpc
 

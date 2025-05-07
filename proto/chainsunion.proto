@@ -1,0 +1,474 @@
+syntax = "proto3";
+
+enum ReturnCode{
+  SUCCESS = 0;
+  ERROR = 1;
+}
+
+option go_package = "./proto/chainsunion";
+option java_package = "proto.chainsunion";
+package chainsunion;
+
+enum TxStatus{
+  TX_NOTFOUND = 0;
+  TX_PENDING = 1;
+  TX_FAILED = 2;
+  TX_SUCCESS = 3;
+  TX_CONTRACT_EXECUTE_FAILED =4;
+}
+
+
+message TxMessage {
+  string hash = 1;
+  uint32 index = 2;
+  string from = 3;
+  string to = 4;
+  string value = 7;
+  string fee = 5;
+  TxStatus status = 6;
+  int32 type = 8;
+  string height = 9;
+  string contract_address = 10;
+  string datetime = 11;
+  string data = 12;
+}
+
+message BlockData {
+  string hash = 1;
+  string baseFee = 2;
+  repeated TxMessage transactions = 3;
+}
+
+message BlockHeader {
+  string hash = 1;
+  string parent_hash = 2;
+  string uncle_hash = 3;
+  string coin_base = 4;
+  string root = 5;
+  string tx_hash = 6;
+  string receipt_hash = 7;
+  string parent_beacon_root = 8;
+  string difficulty = 9;
+  string number = 10;
+  uint64 gas_limit = 11;
+  uint64 gas_used = 12;
+  uint64 time = 13;
+  string extra = 14;
+  string mix_digest = 15;
+  string nonce = 16;
+  string base_fee = 17;
+  string withdrawals_hash = 18;
+  uint64 blob_gas_used = 19;
+  uint64 excess_blob_gas = 20;
+}
+
+message Log {
+  string address = 1;
+  repeated string topics = 2;
+  string data = 3;
+  string block_number = 4;
+  string tx_hash = 5;
+  uint64 tx_index = 6;
+  string block_hash = 7;
+  uint64 index = 8;
+  bool removed = 9;
+}
+
+message SupportChainsRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+}
+
+message SupportChainsResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  bool support = 3;
+}
+
+message ConvertAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string type = 4;
+  string public_key = 5;
+}
+
+message ConvertAddressResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  string address = 3;
+}
+
+message ValidAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string address = 4;
+}
+
+message ValidAddressResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  bool valid = 3;
+}
+
+message BlockNumberRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  int64 height = 3;
+  bool view_tx = 4;
+}
+
+message BlockHashRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string hash = 3;
+  bool view_tx = 4;
+}
+
+message BlockInfoTransactionList {
+  string from = 1;
+  string to = 2;
+  string token_address = 3;
+  string contract_wallet = 4;
+  string hash = 5;
+  uint64 height = 6;
+  string amount = 7;
+}
+
+message BlockResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  int64 height = 3;
+  string hash = 4;
+  string base_fee = 5;
+  repeated BlockInfoTransactionList transactions = 6;
+}
+
+message BlockHeaderHashRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string hash = 4;
+}
+
+message BlockHeaderNumberRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  int64 height = 4;
+}
+
+message BlockHeaderResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  BlockHeader block_header = 3;
+}
+
+message BlockByRangeRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string start = 4;
+  string end = 5;
+}
+
+message BlockByRangeResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated BlockHeader block_header = 3;
+}
+
+message AccountRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string address = 5;
+  string contract_address = 6;
+  uint64 proposer_key_index = 7;
+}
+
+message AccountResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string network = 3;
+  string account_number = 4;
+  string sequence = 5;
+  string balance = 6;
+}
+
+message FeeRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string rawTx = 5;
+  string address = 6;
+}
+
+message FeeResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string slow_fee = 3;
+  string normal_fee = 4;
+  string fast_fee = 5;
+}
+
+
+message SendTxRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string raw_tx = 5;
+}
+
+message SendTxResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string tx_hash = 3;
+}
+
+message TxAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string address = 5;
+  string contract_address = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
+}
+
+
+message TxAddressResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated TxMessage tx = 3;
+}
+
+
+message TxHashRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string hash = 5;
+}
+
+message TxHashResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  TxMessage tx = 3;
+}
+
+message UnSignTransactionRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string base64_tx = 4;
+}
+
+message UnSignTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string un_sign_tx = 3;
+}
+
+message SignedTransactionRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string base64_tx = 4;
+  string signature = 5;
+  string public_key = 6;
+}
+
+message SignedTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string signed_tx = 3;
+}
+
+message VerifyTransactionRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string public_key = 4;
+  string signature = 5;
+}
+
+message VerifyTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  bool verify = 3;
+}
+
+message DecodeTransactionRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string raw_tx = 4;
+}
+
+message DecodeTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string base64_tx = 3;
+}
+
+message ExtraDataRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string address = 4;
+  string coin = 5;
+}
+
+message ExtraDataResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string value = 3;
+}
+
+message NftMessage {
+  string token_contract_address	= 1;
+  string token_id	 = 2;
+  string amount = 3;
+  string token_name = 4;
+  string token_url = 5;
+  string description = 6;
+  string meta_data = 7;
+}
+
+message NftAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string address = 4;
+  string protocol_type = 5;
+  string contract_address = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
+}
+
+message NftAddressResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated NftMessage nft_info = 3;
+}
+
+message NftCollectionMessage {
+  string token_id	= 1;
+  string holding_address_amount = 2;
+  string token_url = 3;
+  string protocol_type = 4;
+  string last_transaction_time = 5;
+  string last_price = 6;
+  string last_price_unit = 7;
+  string transaction_count = 8;
+  string mint_time = 9;
+  string title = 10;
+}
+
+message NftCollectionRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string token_contract_address	= 4;
+  string filter_type = 5;
+  string token_id = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
+}
+
+message NftCollectionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated NftCollectionMessage nft_collection_message = 3;
+}
+
+message NftDetailRequest {
+
+}
+
+message NftDetailResponse {
+
+}
+
+message NftHolderListRequest {
+
+}
+
+message NftHolderListResponse {
+
+}
+
+message NftTradeHistoryRequest {
+
+}
+
+message NftTradeHistoryResponse {
+
+}
+
+message AddressNftTradeHistoryRequest {
+
+}
+
+message AddressNftTradeHistoryResponse {
+
+}
+
+service ChainsUnionService {
+  /*链支持*/
+  rpc getSupportChains(SupportChainsRequest) returns (SupportChainsResponse) {}
+  /*地址转换*/
+  rpc convertAddress(ConvertAddressRequest) returns(ConvertAddressResponse){}
+  /*地址校验*/
+  rpc validAddress(ValidAddressRequest) returns(ValidAddressResponse){}
+  /*根据区块号获取区块*/
+  rpc getBlockByNumber(BlockNumberRequest) returns (BlockResponse) {}
+  /*根据 hash 获取区块*/
+  rpc getBlockByHash(BlockHashRequest) returns (BlockResponse) {}
+  /*根据 hash 获取区块头*/
+  rpc getBlockHeaderByHash(BlockHeaderHashRequest) returns(BlockHeaderResponse){}
+  /*根据区块号获取区块头*/
+  rpc getBlockHeaderByNumber(BlockHeaderNumberRequest) returns (BlockHeaderResponse) {}
+  /*根据范围获取区块头*/
+  rpc getBlockHeaderByRange(BlockByRangeRequest) returns(BlockByRangeResponse){}
+  /*获取账号信息*/
+  rpc getAccount(AccountRequest) returns (AccountResponse) {}  // account_number, nonce 和 balance
+  /*获取手续费*/
+  rpc getFee(FeeRequest) returns (FeeResponse) {}
+  /*发送交易*/
+  rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
+  /*根据地址获取交易*/
+  rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
+  /*根据交易 hash 获取交易*/
+  rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
+  /*构建未签名交易*/
+  rpc buildUnSignTransaction(UnSignTransactionRequest) returns(UnSignTransactionResponse){}
+  /*构建已签名交易*/
+  rpc buildSignedTransaction(SignedTransactionRequest) returns(SignedTransactionResponse){}
+  /*交易解码，解析成可读形式*/
+  rpc decodeTransaction(DecodeTransactionRequest) returns(DecodeTransactionResponse){}
+  /*校验已签名交易*/
+  rpc verifySignedTransaction(VerifyTransactionRequest) returns(VerifyTransactionResponse){}
+  /*获取额外数据*/
+  rpc getExtraData(ExtraDataRequest) returns (ExtraDataResponse) {}
+  /*获取某个地址的 NFT 列表*/
+  rpc getNftListByAddress(NftAddressRequest) returns (NftAddressResponse){}
+  /*获取 NFT 的集合*/
+  rpc getNftCollection(NftCollectionRequest) returns (NftCollectionResponse){}
+  /*获取 NFT 的细节*/
+  rpc getNftDetail(NftDetailRequest) returns (NftDetailResponse){}
+  /*获取 NFT 的持有者列表*/
+  rpc getNftHolderList(NftHolderListRequest) returns (NftHolderListResponse){}
+  /*获取 NFT 的交易历史*/
+  rpc getNftTradeHistory(NftTradeHistoryRequest) returns (NftTradeHistoryResponse){}
+  /*获取某个地址的 NFT 交易历史*/
+  rpc getAddressNftTradeHistory(AddressNftTradeHistoryRequest) returns (AddressNftTradeHistoryResponse){}
+}

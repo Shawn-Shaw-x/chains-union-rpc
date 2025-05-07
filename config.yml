@@ -1,0 +1,169 @@
+server:
+  port: 8189
+
+network: mainnet
+
+#chains: [Ethereum]
+
+chains: [Ethereum, Solana, Tron, Aptos, Sui, Zksync, Arbitrum,BscChain,Mantle ,Optimism,Linea,Scroll,Polygon,Xlm,Btt]
+
+wallet_node:
+  eth:
+    rpc_url: 'https://eth-holesky.g.alchemy.com/v2/hjpdqw65S83C_sPuhkGUUjQCduMJdyrm'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api-holesky.etherscan.io/api?'
+    data_api_key: 'ZHZSWFBE9Z8RA911346X7S26JU5ZDQD4EP'
+    data_api_token: ''
+    time_out: 15
+
+  cosmos:
+    rpc_url: 'https://cosmos-rpc.publicnode.com:443'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://cosmos-rest.publicnode.com/'
+    data_api_key: 'HZEZGEPJJDA633N421AYW9NE8JFNZZC7JT'
+    data_api_token: ''
+    time_out: 15
+
+  solana:
+    rpc_url: 'https://go.getblock.io/70f479b9ed834b5f96a26934e0492b36'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://public-api.solscan.io'
+    data_api_key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkQXQiOjE3MjQwNjIxMzk5MDYsImVtYWlsIjoiemFja2d1by5ndW9AZ21haWwuY29tIiwiYWN0aW9uIjoidG9rZW4tYXBpIiwiYXBpVmVyc2lvbiI6InYxIiwiaWF0IjoxNzI0MDYyMTM5fQ.EaWDC25lyGNx_LqRL5sAYYKLMbq10brnexKnAz9C3UY'
+    data_api_token: ''
+    time_out: 15
+
+  tron:
+    rpc_url: 'https://api.trongrid.io'
+    rpc_user: 'TRON-PRO-API-KEY'
+    rpc_pass: 'f7ae3e01-17d1-4a31-92b3-57f99457d915'
+    data_api_url: 'https://www.oklink.com'
+    data_api_key: '5181d535-b68f-41cf-bbc6-25905e46b6a6'
+    data_api_token: ''
+    time_out: 15
+
+  sui:
+    rpc_url: 'https://sui-mainnet-endpoint.blockvision.org'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: ''
+    data_api_key: ''
+    data_api_token: ''
+    time_out: 15
+
+  ton:
+    rpc_url: 'https://ton.org/global.config.json'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://toncenter.com/api/v3'
+    data_api_key: ''
+    data_api_token: ''
+    time_out: 15
+
+  xlm:
+    rpc_url: 'https://thrilling-shy-sky.stellar-mainnet.quiknode.pro/d47047130637d0acb7029b8d21ae7ac4fb24bdd0'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://horizon.stellar.org'
+    data_api_key: ''
+    data_api_token: ''
+    time_out: 15
+
+  aptos:
+    rpc_url: 'https://api.mainnet.aptoslabs.com/'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: ''
+    data_api_key: 'aptoslabs_7Gd8hUMMp85_JxF2SXZCDcmeP4tjuuBXjwFwqyY6nTFup'
+    data_api_token: ''
+    time_out: 15
+
+  arbi:
+    rpc_url: 'https://arb-mainnet.g.alchemy.com/v2/tQ6olBJhhJY0_v04kavsliE758vz_qE_'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.arbiscan.io/api?'
+    data_api_key: 'RN4TWQ841NG1BW4JZVS16DGIJVUSEK2SJI'
+    data_api_token: ''
+    time_out: 15
+
+  op:
+    rpc_url: 'https://opt-mainnet.g.alchemy.com/v2/tQ6olBJhhJY0_v04kavsliE758vz_qE_'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api-optimistic.etherscan.io/api?'
+    data_api_key: 'YCFBNATTG2DMWJDF78XW1PCFKE97MWZ384'
+    data_api_token: ''
+    time_out: 60
+
+  polygon:
+    rpc_url: 'https://rpc.ankr.com/polygon/0bd11fc050b965ffb96f31d7c9dda12d44752d64d5feb34065301564b636a76f'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.polygonscan.com/api?'
+    data_api_key: 'MSZJ952GZXKTJITPXYS1YKC33TBNWHDSIX'
+    data_api_token: ''
+    time_out: 15
+  bsc:
+    rpc_url: 'https://bnb-mainnet.g.alchemy.com/v2/tQ6olBJhhJY0_v04kavsliE758vz_qE_'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.bscscan.com/api?'
+    data_api_key: '2TNI2395PV8XNXHSESC23XUP688NN3G3NW'
+    data_api_token: ''
+    time_out: 15
+  mantle:
+    rpc_url: 'https://mantle-mainnet.g.alchemy.com/v2/tQ6olBJhhJY0_v04kavsliE758vz_qE__'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.mantlescan.xyz/api?'
+    data_api_key: '52G7PCPGGZGT9BBM992CQUZID5RB54NUI8'
+    data_api_token: ''
+    time_out: 15
+
+  linea:
+    rpc_url: 'https://linea-mainnet.g.alchemy.com/v2/tQ6olBJhhJY0_v04kavsliE758vz_qE_'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.lineascan.build/api?'
+    data_api_key: 'JTA7AJMNTEZD48QUMYJ12XU5DPNA7BSU5B'
+    data_api_token: ''
+    time_out: 15
+
+  scroll:
+    rpc_url: 'https://scroll-mainnet.g.alchemy.com/v2/tQ6olBJhhJY0_v04kavsliE758vz_qE_'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.scrollscan.com/api?'
+    data_api_key: 'AKBS2JGA31IK19WGBHWP8JVASRRMXGX9PP'
+    data_api_token: ''
+    time_out: 15
+
+  icp:
+    rpc_url: 'http://localhost:8081'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: ''
+    data_api_key: ''
+    data_api_token: ''
+    time_out: 15
+
+  zksync:
+    rpc_url: 'https://1rpc.io/zksync2-era'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.etherscan.io/v2/api?chainid=324&'
+    data_api_key: 'HZEZGEPJJDA633N421AYW9NE8JFNZZC7JT'
+    data_api_token: ''
+    time_out: 15
+
+  btt:
+    rpc_url: 'https://rpc.bt.io'
+    rpc_user: ''
+    rpc_pass: ''
+    data_api_url: 'https://api.bttcscan.com/api?'
+    data_api_key: 'HZEZGEPJJDA633N421AYW9NE8JFNZZC7JT'
+    data_api_token: ''
+    time_out: 15

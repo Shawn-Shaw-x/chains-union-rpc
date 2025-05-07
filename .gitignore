@@ -29,6 +29,6 @@ data
 .data
 
 # local compiled file
-./signature
-/signature
+./chain-union-rpc
+/chain-union-rpc
 
