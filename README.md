@@ -23,7 +23,7 @@
 ### Clone & Build
 
 ```bash
-git clone https://github.com/your-org/MyGoRPCProject.git
+git clone https://github.com/Shawn-Shaw-x/chains-union-rpc.git
 cd chains-union-rpc
 go mod tidy
 make compile
@@ -52,8 +52,7 @@ grpcui -plaintext 127.0.0.1:8189
 ```
 
 ## 🐰 项目架构图
-
-
+![image.png](https://img.learnblockchain.cn/attachments/2025/05/rFyfX9XO681b88ccb1427.png)
 
 ## 🍌 实现的接口
     1. 链支持

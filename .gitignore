@@ -29,6 +29,6 @@ data
 .data
 
 # local compiled file
-./chain-union-rpc
-/chain-union-rpc
+./chains-union-rpc
+/chains-union-rpc
 
