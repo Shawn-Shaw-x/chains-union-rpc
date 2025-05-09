@@ -9,9 +9,7 @@
 ![Last Commit](https://img.shields.io/github/last-commit/Shawn-Shaw-x/chains-union-rpc)
 ![Lines of Code](https://img.shields.io/tokei/lines/github/Shawn-Shaw-x/chains-union-rpc?color=success)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
-
 [![Go Report Card](https://goreportcard.com/badge/github.com/Shawn-Shaw-x/chains-union-rpc)](https://goreportcard.com/report/github.com/Shawn-Shaw-x/chains-union-rpc)
-[![CodeQL](https://github.com/Shawn-Shaw-x/chains-union-rpc/actions/workflows/codeql.yml/badge.svg)](https://github.com/Shawn-Shaw-x/chains-union-rpc/actions/workflows/codeql.yml)
 
 一个轻量级高性能的 Go RPC 服务，通过聚合多链的 rpc 接口，提供统一的接口调用。
 ---
