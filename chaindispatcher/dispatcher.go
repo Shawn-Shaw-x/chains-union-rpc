@@ -81,7 +81,7 @@ func (d *ChainDispatcher) Interceptor(ctx context.Context, req interface{}, info
 func (d *ChainDispatcher) preHandler(req interface{}) (resp *CommonReply, chainName string) {
 	chainName = strings.ToLower(req.(CommonRequest).GetChain())
 	log.Debug("chain", "chainName", chainName, "req", req)
-	if _, ok := d.registry[ChainType(req.(CommonRequest).GetChain())]; !ok {
+	if _, ok := d.registry[ChainType(chainName)]; !ok {
 		return &CommonReply{
 			Code:    chainsunion.ReturnCode_ERROR,
 			Msg:     config.UnsupportedChain,

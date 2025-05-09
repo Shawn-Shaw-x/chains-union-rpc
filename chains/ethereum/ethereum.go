@@ -55,7 +55,7 @@ func NewChainAdaptor(conf *config.Config) (chains.IChainAdaptor, error) {
 func (c *ChainAdaptor) GetSupportChains(req *chainsunion.SupportChainsRequest) (*chainsunion.SupportChainsResponse, error) {
 	return &chainsunion.SupportChainsResponse{
 		Code:    chainsunion.ReturnCode_SUCCESS,
-		Msg:     "support Chains " + ChainName,
+		Msg:     "support Chains " + strings.ToLower(ChainName),
 		Support: true,
 	}, nil
 }
