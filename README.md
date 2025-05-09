@@ -1,5 +1,18 @@
 # chains-union-rpc 多链聚合 rpc
 
+
+![Go Version](https://img.shields.io/badge/Go-1.20%2B-blue?logo=go)
+![Build](https://img.shields.io/badge/build-passing-brightgreen?logo=github-actions)
+![License](https://img.shields.io/github/license/Shawn-Shaw-x/chains-union-rpc?color=blue)
+![Stars](https://img.shields.io/github/stars/Shawn-Shaw-x/chains-union-rpc?style=social)
+![Issues](https://img.shields.io/github/issues/Shawn-Shaw-x/chains-union-rpc)
+![Last Commit](https://img.shields.io/github/last-commit/Shawn-Shaw-x/chains-union-rpc)
+![Lines of Code](https://img.shields.io/tokei/lines/github/Shawn-Shaw-x/chains-union-rpc?color=success)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/Shawn-Shaw-x/chains-union-rpc)](https://goreportcard.com/report/github.com/Shawn-Shaw-x/chains-union-rpc)
+[![CodeQL](https://github.com/Shawn-Shaw-x/chains-union-rpc/actions/workflows/codeql.yml/badge.svg)](https://github.com/Shawn-Shaw-x/chains-union-rpc/actions/workflows/codeql.yml)
+
 一个轻量级高性能的 Go RPC 服务，通过聚合多链的 rpc 接口，提供统一的接口调用。
 ---
 在钱包开发中，您是否对接对每一个链都要开发一个 client 去进行 rpc 调用感到厌烦？您是否对每个链的不同接口特性开发感到混乱？如果您的回答是 YES，那么，这个项目将会拯救你。
