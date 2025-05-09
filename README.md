@@ -7,7 +7,6 @@
 ![Stars](https://img.shields.io/github/stars/Shawn-Shaw-x/chains-union-rpc?style=social)
 ![Issues](https://img.shields.io/github/issues/Shawn-Shaw-x/chains-union-rpc)
 ![Last Commit](https://img.shields.io/github/last-commit/Shawn-Shaw-x/chains-union-rpc)
-![Lines of Code](https://img.shields.io/tokei/lines/github/Shawn-Shaw-x/chains-union-rpc?color=success)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Shawn-Shaw-x/chains-union-rpc)](https://goreportcard.com/report/github.com/Shawn-Shaw-x/chains-union-rpc)
 
