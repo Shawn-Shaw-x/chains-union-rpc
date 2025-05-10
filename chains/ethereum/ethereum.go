@@ -472,7 +472,7 @@ func (c *ChainAdaptor) BuildUnSignTransaction(req *chainsunion.UnSignTransaction
 	}
 
 	log.Info("ethereum BuildUnsignTransaction", "dFeeTx", util.ToJSONString(dFeeTx))
-	/*创建未签名交易*/
+	/*创建未签名交易hash（32 字节）*/
 	rawTx, err := evmbase.CreateEip1559UnSignTx(dFeeTx, dFeeTx.ChainID)
 	if err != nil {
 		log.Error("create un sign tx fail", "err", err)

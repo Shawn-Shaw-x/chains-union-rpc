@@ -58,6 +58,7 @@ func CreateEip1559UnSignTx(txData *types.DynamicFeeTx, chainId *big.Int) (string
 	tx := types.NewTx(txData)
 	// 签名者
 	signer := types.LatestSignerForChainID(chainId)
+	// 返回 messageHash
 	txHash := signer.Hash(tx)
 	return txHash.String(), nil
 }
