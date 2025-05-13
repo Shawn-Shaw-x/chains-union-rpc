@@ -9,7 +9,8 @@ chains: [Ethereum, Solana, Tron, Aptos, Sui, Zksync, Arbitrum,BscChain,Mantle ,O
 
 wallet_node:
   eth:
-    rpc_url: 'https://eth-holesky.g.alchemy.com/v2/hjpdqw65S83C_sPuhkGUUjQCduMJdyrm'
+    rpc_url: 'https://rpc.ankr.com/eth_holesky'
+    #    rpc_url: 'https://eth-holesky.g.alchemy.com/v2/hjpdqw65S83C_sPuhkGUUjQCduMJdyrm'
     rpc_user: ''
     rpc_pass: ''
     data_api_url: 'https://api-holesky.etherscan.io/api?'
