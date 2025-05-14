@@ -39,11 +39,11 @@ type ChainAdaptor struct {
 func NewChainAdaptor(conf *config.Config) (chains.IChainAdaptor, error) {
 	ethClient, err := evmbase.DialEthClient(context.Background(), conf.WalletNode.Eth.RpcUrl)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to connect to Ethereum client: %w", err)
 	}
 	ethDataClient, err := evmbase.NewEthDataClient(conf.WalletNode.Eth.DataApiUrl, conf.WalletNode.Eth.DataApiKey, time.Second*15)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to connect to Ethereum-DataPlaform client: %w", err)
 	}
 	return &ChainAdaptor{
 		ethClient:     ethClient,
@@ -124,8 +124,8 @@ func (c *ChainAdaptor) GetBlockByNumber(req *chainsunion.BlockNumberRequest) (*c
 		bitItem := &chainsunion.BlockInfoTransactionList{
 			From:           v.From,
 			To:             v.To,
-			TokenAddress:   v.To,
-			ContractWallet: v.To,
+			TokenAddress:   common.Address{}.String(),
+			ContractWallet: common.Address{}.String(),
 			Hash:           v.Hash,
 			Height:         blockNumber,
 			Amount:         v.Value,
